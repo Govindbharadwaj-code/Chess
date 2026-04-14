@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="game-header">
+            <h1>♟ Chess</h1>
+            <div class="header-controls">
+                <div class="mode-selector">
+                    <button id="btn-1p" class="btn mode-btn active" data-mode="1p">vs AI</button>
+                    <button id="btn-2p" class="btn mode-btn" data-mode="2p">2 Players</button>
+                </div>
+                <button id="btn-theme" class="btn icon-btn" title="Toggle theme">🌙</button>
+            </div>
+        </header>
+
+        <!-- Main game area -->
+        <main class="game-area">
+
+            <!-- Left: captured pieces + board + captured pieces -->
+            <div class="board-section">
+                <div class="player-bar top" id="bar-black">
+                    <span class="player-name">Black</span>
+                    <div class="captured-pieces" id="captured-by-white"></div>
+                    <div class="score-diff" id="score-diff-top"></div>
+                </div>
+
+                <div class="board-container">
+                    <div class="board-labels-col left" id="rank-labels"></div>
+                    <div class="board-wrapper">
+                        <div class="board" id="chess-board"></div>
+                    </div>
+                    <div class="board-labels-col right"></div>
+                </div>
+                <div class="board-labels-row" id="file-labels"></div>
+
+                <div class="player-bar bottom" id="bar-white">
+                    <span class="player-name">White</span>
+                    <div class="captured-pieces" id="captured-by-black"></div>
+                    <div class="score-diff" id="score-diff-bottom"></div>
+                </div>
+            </div>
+
+            <!-- Right: controls + move history -->
+            <aside class="side-panel">
+
+                <div class="status-panel glass-card">
+                    <div class="turn-indicator">
+                        <div class="turn-dot" id="turn-dot"></div>
+                        <span id="turn-text">White's Turn</span>
+                    </div>
+                    <div class="status-message" id="status-message"></div>
+                </div>
+
+                <div class="controls glass-card">
+                    <button id="btn-new-game" class="btn btn-primary">New Game</button>
+                    <button id="btn-undo" class="btn">↩ Undo</button>
+                    <button id="btn-flip" class="btn">⇅ Flip</button>
+                </div>
+
+                <div class="difficulty-panel glass-card" id="difficulty-panel">
+                    <label class="panel-label">AI Difficulty</label>
+                    <div class="difficulty-options">
+                        <button class="btn diff-btn" data-level="1">Easy</button>
+                        <button class="btn diff-btn active" data-level="3">Medium</button>
+                        <button class="btn diff-btn" data-level="5">Hard</button>
+                    </div>
+                </div>
+
+                <div class="move-history glass-card">
+                    <label class="panel-label">Move History</label>
+                    <div id="moves-list" class="moves-list"></div>
+                </div>
+
+            </aside>
+        </main>
+    </div>
+
+    <!-- Pawn promotion modal -->
+    <div class="modal-overlay hidden" id="promotion-overlay">
+        <div class="modal glass-card">
+            <h3>Promote Pawn</h3>
+            <div class="promotion-choices" id="promotion-choices"></div>
+        </div>
+    </div>
+
+    <!-- Game over modal -->
+    <div class="modal-overlay hidden" id="gameover-overlay">
+        <div class="modal glass-card" id="gameover-modal">
+            <h2 id="gameover-title">Game Over</h2>
+            <p id="gameover-message"></p>
+            <button id="btn-play-again" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="js/chess.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
