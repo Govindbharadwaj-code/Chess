@@ -1,0 +1,93 @@
+/* Dark background for window */
+.root {
+    -fx-background-color: #1e1e2f;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Board cell styles */
+.cell-light {
+    -fx-background-color: #f0d9b5;
+}
+.cell-dark {
+    -fx-background-color: #b58863;
+}
+
+/* Highlights */
+.cell-selected {
+    -fx-background-color: #f6f669cc;
+}
+.cell-valid-move {
+    -fx-background-color: rgba(0, 200, 0, 0.4);
+}
+.cell-last-move {
+    -fx-background-color: #cdd52680;
+}
+.cell-in-check {
+    -fx-background-color: #e74c3ccc;
+}
+
+/* Piece labels */
+.piece-label {
+    -fx-font-size: 42px;
+    -fx-effect: dropshadow(gaussian, black, 6, 0.4, 0, 1);
+}
+.piece-white {
+    -fx-text-fill: #ffffff;
+}
+.piece-black {
+    -fx-text-fill: #1a1a1a;
+}
+
+/* Side panel */
+.side-panel {
+    -fx-background-color: #2a2a3f;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+/* Status label */
+.status-label {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Buttons */
+.game-button {
+    -fx-background-color: #4a4a6a;
+    -fx-text-fill: white;
+    -fx-border-color: #6a6a8a;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-min-width: 120px;
+}
+.game-button:hover {
+    -fx-background-color: #5a5a7a;
+}
+
+/* Move history */
+.move-history {
+    -fx-background-color: #1a1a2e;
+    -fx-control-inner-background: #1a1a2e;
+    -fx-text-fill: #c0c0c0;
+}
+
+.move-history .list-cell {
+    -fx-background-color: #1a1a2e;
+    -fx-text-fill: #c0c0c0;
+    -fx-font-size: 12px;
+}
+
+.move-history .list-cell:selected {
+    -fx-background-color: #3a3a5e;
+    -fx-text-fill: #ffffff;
+}
+
+/* Title */
+.title-label {
+    -fx-text-fill: #d4af37;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #d4af3780, 10, 0.5, 0, 0);
+}
