@@ -1,0 +1,10 @@
+# Build artifacts
+chess-standalone.html
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
