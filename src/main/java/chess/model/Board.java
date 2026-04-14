@@ -111,7 +111,7 @@ public class Board {
                 // Check if pawn moved 2 squares (set en passant target)
                 if (move.piece.getType() == PieceType.PAWN && Math.abs(toRow - fromRow) == 2) {
                     int epRow = (fromRow + toRow) / 2;
-                    enPassantTarget = new int[]{epRow, fromCol};
+                    enPassantTarget = new int[]{epRow, toCol};
                 }
                 squares[toRow][toCol] = squares[fromRow][fromCol];
                 squares[fromRow][fromCol] = null;

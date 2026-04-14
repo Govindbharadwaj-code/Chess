@@ -171,10 +171,8 @@ public class GameController {
         if (aiThinking) return;
         if (gameState.canUndo()) {
             gameState.undoLastMove();
-            // If vs AI, undo the AI's move too
-            if (vsAI && gameState.canUndo() && gameState.getCurrentTurn() == PieceColor.WHITE) {
-                // We just undid a white move, but we also need to undo the AI black move before it
-            } else if (vsAI && gameState.getCurrentTurn() == PieceColor.BLACK && gameState.canUndo()) {
+            // In AI mode, also undo the player's move so it's back to WHITE's turn
+            if (vsAI && gameState.canUndo() && gameState.getCurrentTurn() != PieceColor.WHITE) {
                 gameState.undoLastMove();
             }
 
